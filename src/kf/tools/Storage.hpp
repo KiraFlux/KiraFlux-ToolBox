@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Preferences.h>
-
 #include <kf/Logger.hpp>
 
 
