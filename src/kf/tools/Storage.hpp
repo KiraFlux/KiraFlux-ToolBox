@@ -1,8 +1,8 @@
 #pragma once
 
 #include <Preferences.h>
-#include <kf/Logger.hpp>
 
+#include <kf/Logger.hpp>
 
 namespace kf {
 
@@ -10,11 +10,9 @@ namespace kf {
 template<typename T> struct Storage final {
 
 private:
-
     static constexpr const char *preferences_namespace = "KF-cfg";
 
 public:
-
     const char *key;
     T settings;
 
@@ -75,7 +73,6 @@ public:
     }
 
 private:
-
     bool begin(Preferences &preferences, bool read_only) const {
         if (preferences.begin(preferences_namespace, read_only)) {
             return true;
@@ -89,4 +86,4 @@ public:
     Storage(const Storage &) = delete;
 };
 
-}
+}// namespace kf

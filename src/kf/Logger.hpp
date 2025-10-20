@@ -1,8 +1,8 @@
 #pragma once
 
 #include <Arduino.h>
-#include <kf/tools/meta/Singleton.hpp>
 
+#include <kf/tools/meta/Singleton.hpp>
 
 namespace kf {
 
@@ -58,7 +58,7 @@ struct Logger final : tools::Singleton<Logger> {
     }
 };
 
-}
+}// namespace kf
 
 /// Debug
 #define kf_Logger_level_debug 0
@@ -78,31 +78,31 @@ struct Logger final : tools::Singleton<Logger> {
 #endif
 
 #if kf_Logger_level_debug >= kf_Logger_level
-#define kf_Logger_debug(...)   kf::Logger::instance().log("Debug",   __PRETTY_FUNCTION__, __VA_ARGS__)
+#define kf_Logger_debug(...) kf::Logger::instance().log("Debug", __PRETTY_FUNCTION__, __VA_ARGS__)
 #else
 #define kf_Logger_debug(...)
 #endif
 
 #if kf_Logger_level_info >= kf_Logger_level
-#define kf_Logger_info(...)   kf::Logger::instance().log("Info",   __PRETTY_FUNCTION__, __VA_ARGS__)
+#define kf_Logger_info(...) kf::Logger::instance().log("Info", __PRETTY_FUNCTION__, __VA_ARGS__)
 #else
 #define kf_Logger_info(...)
 #endif
 
 #if kf_Logger_level_warn >= kf_Logger_level
-#define kf_Logger_warn(...)   kf::Logger::instance().log("Warn",   __PRETTY_FUNCTION__, __VA_ARGS__)
+#define kf_Logger_warn(...) kf::Logger::instance().log("Warn", __PRETTY_FUNCTION__, __VA_ARGS__)
 #else
 #define kf_Logger_warn(...)
 #endif
 
 #if kf_Logger_level_error >= kf_Logger_level
-#define kf_Logger_error(...)   kf::Logger::instance().log("Error",   __PRETTY_FUNCTION__, __VA_ARGS__)
+#define kf_Logger_error(...) kf::Logger::instance().log("Error", __PRETTY_FUNCTION__, __VA_ARGS__)
 #else
 #define kf_Logger_error(...)
 #endif
 
 #if kf_Logger_level_fatal >= kf_Logger_level
-#define kf_Logger_fatal(...)   kf::Logger::instance().log("Fatal",   __PRETTY_FUNCTION__, __VA_ARGS__)
+#define kf_Logger_fatal(...) kf::Logger::instance().log("Fatal", __PRETTY_FUNCTION__, __VA_ARGS__)
 #else
 #define kf_Logger_fatal(...)
 #endif

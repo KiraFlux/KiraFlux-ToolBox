@@ -1,13 +1,15 @@
 #pragma once
 
+#include <kf/aliases.hpp>
+
 namespace kf::tools {
 
 /// Экспоненциальный фильтр
 template<typename T> struct ExponentialFilter {
-    float k;
+    f32 k;
     T filtered;
 
-    constexpr explicit ExponentialFilter(float k, T init_value = T{}) :
+    constexpr explicit ExponentialFilter(f32 k, T init_value = T{}) :
         k{k}, filtered{init_value} {}
 
     const T &calc(const T &value) {
@@ -16,4 +18,4 @@ template<typename T> struct ExponentialFilter {
     }
 };
 
-}
+}// namespace kf::tools

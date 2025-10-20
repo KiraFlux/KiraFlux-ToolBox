@@ -25,4 +25,4 @@ protected:
     ~Singleton() = default;
 };
 
-}// namespace djc
+}// namespace kf::tools
